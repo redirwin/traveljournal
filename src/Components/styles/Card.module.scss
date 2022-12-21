@@ -1,0 +1,110 @@
+@use '../../global-styles/mixins.scss'as mixins;
+
+.Card {
+    color: black;
+    height: 200px;
+    width: 85%;
+    max-width: 768px;
+    // min-width: 730px;
+    margin: 2.5rem auto;
+    display: flex;
+
+    .imageContainer {
+        width: 40%;
+        max-width: 125px;
+        height: 100%;
+
+        @media (max-width: 768px) {
+            width: 90%;
+            max-width: 100%;
+            margin: 0 auto 1rem;
+        }
+
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .textContainer {
+        width: 75%;
+        padding-left: 1.5rem;
+        margin-top: 1rem;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+    }
+
+    .locationDiv {
+        display: flex;
+        align-items: center;
+        font-size: .64rem;
+        line-height: 12px;
+
+        svg {
+            color: mixins.$main-accent;
+            margin-right: 0.25rem;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            margin-right: 1rem;
+            letter-spacing: 0.17em;
+            font-weight: 400;
+        }
+
+        a {
+            color: mixins.$dark-gray;
+        }
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 1.56rem;
+        line-height: 1.875rem;
+        color: mixins.$dark-black;
+        margin: .5rem 0 1rem;
+    }
+
+    p {
+        font-size: .64rem;
+    }
+
+    .date {
+        font-weight: 700;
+        margin-bottom: .5rem;
+    }
+
+    .description {
+        font-weight: 400;
+        line-height: 150%;
+        overflow: auto;
+
+    }
+
+    .linksContainer {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        font-size: .64rem;
+        margin-top: .5rem;
+
+        * {
+            color: mixins.$dark-gray;
+            margin-right: .25rem;
+        }
+
+    }
+
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: auto;
+    }
+
+}
